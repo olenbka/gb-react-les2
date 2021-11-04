@@ -1,9 +1,9 @@
 import './App.css';
-import { Homework } from './homework-3';
+import { HomeworkRoute } from './homework-4';
 
 function App() {
   return (
-    <Homework />
+    <HomeworkRoute />
   );
 }
 
