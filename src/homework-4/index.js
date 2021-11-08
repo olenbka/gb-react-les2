@@ -5,30 +5,34 @@ import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import { Home } from './routes/Home';
 import { Chats } from './routes/Chats';
 import { Profile } from './routes/Profile';
+import { Provider } from "react-redux";
+import { Store } from "./store";
 
 export const HomeworkRoute = () => {
     return(
         <div>
-            <BrowserRouter>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Button to="/" component={Link} color="inherit" >
-                            Home
-                        </Button>
-                        <Button to="/profile" component={Link} color="inherit" >
-                            Profile
-                        </Button>
-                        <Button to="/chats" component={Link} color="inherit" >
-                            Chats
-                        </Button>
-                    </Toolbar>
-                </AppBar>
-                <Switch>
-                    <Route component={Chats} path="/chats" />
-                    <Route component={Profile} path="/profile" />
-                    <Route component={Home} path="/" />
-                </Switch>
-            </BrowserRouter>
+            <Provider store={Store}>
+                <BrowserRouter>
+                    <AppBar position="static">
+                        <Toolbar>
+                            <Button to="/" component={Link} color="inherit" >
+                                Home
+                            </Button>
+                            <Button to="/profile" component={Link} color="inherit" >
+                                Profile
+                            </Button>
+                            <Button to="/chats" component={Link} color="inherit" >
+                                Chats
+                            </Button>
+                        </Toolbar>
+                    </AppBar>
+                    <Switch>
+                        <Route component={Chats} path="/chats" />
+                        <Route component={Profile} path="/profile" />
+                        <Route component={Home} path="/" />
+                    </Switch>
+                </BrowserRouter>
+            </Provider>
         </div>
     );
 };

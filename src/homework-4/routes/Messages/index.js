@@ -29,7 +29,7 @@ export const Messages = () => {
             return
         }
 
-        const tail = messageList[messageList.length - 1];
+        const tail = messageList[messageList.lengt - 1];
         if (tail.author === "bot") {
             return;
         }
@@ -48,5 +48,3 @@ export const Messages = () => {
         </>
     );
 };
-
-
