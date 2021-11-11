@@ -6,12 +6,13 @@ import { Home } from './routes/Home';
 import { Chats } from './routes/Chats';
 import { Profile } from './routes/Profile';
 import { Provider } from "react-redux";
-import { Store } from "./store";
+import { store } from "./store";
+
 
 export const HomeworkRoute = () => {
     return(
         <div>
-            <Provider store={Store}>
+            <Provider store={store}>
                 <BrowserRouter>
                     <AppBar position="static">
                         <Toolbar>
