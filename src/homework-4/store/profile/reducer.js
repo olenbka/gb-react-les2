@@ -1,6 +1,5 @@
 import { TOGGLE_SHOW_PROFILE } from "./action";
 
-
 const initialValues = {
     isShow: false,
 }

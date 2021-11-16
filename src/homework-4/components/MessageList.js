@@ -1,15 +1,16 @@
 import propTypes from "prop-types";
 import { Message } from "./Message";
+import { List } from "@material-ui/core";
 
 export const MessageList = (props) => {
     return (
-        <div>
+        <List>
             {props.messageList.map((item) => (
                 <Message key={item.id} {...item} />
-            ))}  
-        </div>      
-    );            
-};        
+            ))}
+        </List>
+    );
+};
 
 MessageList.propTypes = {
     messageList: propTypes.arrayOf(
@@ -20,6 +21,7 @@ MessageList.propTypes = {
         })
     )
 };
+
 MessageList.defaultProps = {
     messageList: []
 };
