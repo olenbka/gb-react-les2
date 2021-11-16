@@ -1,4 +1,4 @@
-import { CREATE_MESSAGE, REMOVE_MESSAGES_BY_CHAT_ID } from "./actions";
+import { ADD_MESSAGE, REMOVE_MESSAGES_BY_CHAT_ID } from "./actions";
 
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 export const messagesReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case CREATE_MESSAGE: {
+        case ADD_MESSAGE: {
             const {
                 message,
                 chatId,
@@ -24,6 +24,7 @@ export const messagesReducer = (state = initialState, action) => {
                 messages: newMessages
             }
         }
+
         case REMOVE_MESSAGES_BY_CHAT_ID: {
             if (!state.messages.hasOwnProperty(action.payload)) {
                 return state

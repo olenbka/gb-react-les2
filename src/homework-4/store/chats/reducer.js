@@ -1,7 +1,8 @@
 import { CREATE_CHAT, REMOVE_CHAT, SET_CHATS }  from "./actions";
+import { CHATS } from '../../mocks/chats';
 
 const initialState = {
-    chats: [],
+    chats: CHATS,
 }
 
 export const chatsReducer = (state = initialState, action) => {
@@ -14,19 +15,21 @@ export const chatsReducer = (state = initialState, action) => {
                 ]
             }
         }
+
         case SET_CHATS: {
             return {
                 chats: [...action.payload]
             }
         }
+
         case REMOVE_CHAT: {
             return {
                 chats: state.chats.filter((item) => item.id !==action.payload)
             }
         }
+
         default: {
             return state;
         } 
     }
-
 }

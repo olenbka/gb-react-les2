@@ -1,19 +1,19 @@
-import { useSelector, useDispatch } from "react-redux";
-import { TOGGLE_SHOW_PROFILE } from "../../store/profile/action";
+import { withProfile } from "../../hocs/withProfile";
 
 
-export const Profile = () => {
-    const dispatch = useDispatch();
-    const isShow = useSelector(state => state.isShow);
-    
+export const ProfileRender = ({
+                            isShow,
+                            toggleShowProfile,
+                           }) => {
     return (
         <div>
             <h1>Profile</h1>
-            <input type="checkbox" checked={isShow} onChange={() => {
-                dispatch({
-                    type: TOGGLE_SHOW_PROFILE
-                })
-            }} />
+
+            <input type="checkbox" checked={isShow} onChange={toggleShowProfile}/>
         </div>
-    );
-};
+
+    ); 
+};       
+
+export const Profile = withProfile(ProfileRender);
+
